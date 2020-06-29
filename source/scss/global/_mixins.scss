@@ -1,0 +1,14 @@
+@mixin gradient($angle: $angleStep*6, $start: $gradientBaseStart, $end: $gradientBaseEnd) {
+    background: linear-gradient($angle, $start, $end);
+}
+
+@mixin column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin font ($size: $sizeSimpleText, $weight: $weightStep*7, $color: $colorTitle) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
