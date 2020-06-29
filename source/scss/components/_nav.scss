@@ -1,0 +1,77 @@
+.sidebar {
+    position: sticky;
+    @include column;
+    width: 70px;
+}
+
+.logo {
+    height: 70px;
+    padding-top: 19px;
+    font: 700 30px 'Deftone Stylus', 'Comic Sans MS', 'Monaco CY', cursive;
+    text-align: center;
+    span {
+        color: $colorBase;
+        @include gradient($angleStep*8);
+        @supports (-webkit-background-clip: text) {
+            color: transparent;
+            @include gradient($angleStep*4);
+            -webkit-background-clip: text;
+        }
+    }
+    &:hover {
+        background: $colorBackground;
+    }
+    &:active {
+        background: $colorSubtitle;
+    }
+}
+
+.sidebar__wrapper {
+    @include gradient($angleStep*4);
+    @include column;
+    flex: auto;
+    a {
+        @include column;
+        align-items: center;
+        font-size: $sizeSubtitle;
+        color: $colorBase;
+        padding: 15px 0;
+        &:first-child {
+            padding-top: 30px;
+        }
+        &:last-child {
+            margin-top: auto;
+            padding-bottom: 20px;
+        }
+        &:hover {
+            background: #c54556;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+input[type="radio"] {
+    display: none;
+}
+// a:after {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: calc(100% - 3.5px);
+//     display: none;
+//     width: 7px;
+//     height: 7px;
+//     background: $colorBase;
+//     transform: rotate(45deg);
+// }
+// a:hover:after {
+//     display: block;
+//     background: #c54556;
+// }
+    // a:only-of-type:hover:after {
+    //     display: none;
+    // }
