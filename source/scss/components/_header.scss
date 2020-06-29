@@ -1,0 +1,192 @@
+header {
+    @include column;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $colorBorder;
+        a {
+            display: flex;
+            align-items: center;
+            border-right: 1px solid $colorBorder;
+            padding: 0 20px;
+        }
+        img {
+            border-right: 1px solid $colorBorder;
+        }
+    }
+}
+
+.read-more {
+    position: relative;
+    width: 34px;
+    height: 18px;
+    @include gradient();
+    border-radius: 9px;
+    span {
+        position: relative;
+        display: block;
+        width: 6px;
+        height: 6px;
+        margin: 6px auto;
+        border-radius: 3px;
+        background: $colorBase;
+        &:before {
+            content: '';
+            position: absolute;
+            right: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background: $colorBase;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background: $colorBase;
+        }
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 100%;
+    @include gradient();
+    background-clip: content-box;
+}
+
+.icon--folder {
+    mask: url(../img/header/folder.png) no-repeat center;
+}
+.icon--setup {
+    mask: url(../img/header/setup.png) no-repeat center;
+}
+.icon--upload {
+    mask: url(../img/header/upload.png) no-repeat center;
+}
+.icon--email {
+    mask: url(../img/header/email.png) no-repeat center;
+}
+.icon--earth {
+    mask: url(../img/header/earth.png) no-repeat center;
+}
+::placeholder {
+    color: $colorSearch;
+}
+.nav__search {
+    position: relative;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid $colorBorder;
+    input {
+        width: 300px;
+        height: 34px;
+        padding-left: 13px;
+        font-size: $sizeSimpleText;
+        background: $colorBackInput;
+        border: 1px solid $colorBorder;
+        border-radius: 17px;
+    }
+    button {
+        content: '';
+        position: absolute;
+        right: calc(50% - 137px);
+        width: 16px;
+        height: 16px;
+        background: url(../img/search.png) no-repeat center;
+        border: none;
+    }
+}
+
+.caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px 0 18px;
+    h4 {
+        padding-bottom: 9px;
+        font: {
+            weight: 700;
+            size: $sizeName;
+        }
+        color: $colorBase;
+        @include gradient();
+        @supports (-webkit-background-clip: text) {
+            color: transparent;
+            @include gradient();
+            -webkit-background-clip: text;
+        }
+    }
+    p {
+        font: {
+            weight: 400;
+            size: $sizeSubtitle;
+        }
+        color: $colorSubtitle;
+    }
+}
+
+.burger {
+    position: relative;
+    align-self: center;
+    width: 4px;
+    height: 4px;
+    margin: 0 19px;
+    border-radius: 50%;
+    background: $colorSubtitle;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: $colorSubtitle;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: $colorSubtitle;
+    }
+}
+
+.stactics {
+    display: flex;
+    height: 100px;
+}
+
+.items {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.item {
+    min-width: 165px;
+    padding-left: 20px;
+    padding-right: 50px;
+    &:first-child {
+        padding-left: 45px;
+    }
+}
+
+.add {
+    @include column;
+    justify-content: center;
+    width: 145px;
+    padding-left: 6px;
+    p {
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
