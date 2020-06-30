@@ -613,6 +613,18 @@ main section {
           box-shadow: 0 0 6px 6px #c8c8c8;
 }
 
+aside {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  background: darkred;
+}
+
+footer {
+  padding: 26px 0;
+  background: #ffffff;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -691,16 +703,6 @@ main section {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 240px;
           flex: 1 1 240px;
-}
-
-aside {
-  height: 100%;
-  background: darkred;
-}
-
-footer {
-  height: 220px;
-  background: darkmagenta;
 }
 
 .aside {
