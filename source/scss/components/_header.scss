@@ -151,14 +151,17 @@ header {
 
 .stactics {
     display: flex;
+    justify-content: space-between;
     height: 100px;
 }
 
 .items {
-    flex: 1 1 auto;
+    flex: 1 0 auto;
+    width: 145px;
     display: flex;
     align-items: center;
-    padding-left: 45px;
+    margin-left: 10px;
+    padding-left: 35px;
     overflow-x: auto;
     overflow-y: hidden;
 }
