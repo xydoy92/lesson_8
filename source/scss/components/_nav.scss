@@ -1,7 +1,14 @@
+.for-nav {
+    flex: 0 0 70px;
+}
+
 .sidebar {
     position: sticky;
-    @include column;
+    top: 0;
+    left: 0;
     width: 70px;
+    height: 100vh;
+    @include column;
 }
 
 .logo {
@@ -9,14 +16,10 @@
     padding-top: 19px;
     font: 700 30px 'Deftone Stylus', 'Comic Sans MS', 'Monaco CY', cursive;
     text-align: center;
+    background: #ffffff;
     span {
-        color: $colorBase;
-        @include gradient($angleStep*8);
-        @supports (-webkit-background-clip: text) {
-            color: transparent;
-            @include gradient($angleStep*4);
-            -webkit-background-clip: text;
-        }
+        color: transparent;
+        @include fontGradientProperties($angleStep*4);
     }
     &:hover {
         background: $colorBackground;
@@ -33,7 +36,7 @@
     a {
         @include column;
         align-items: center;
-        font-size: $sizeSubtitle;
+        font-size: 10px;
         color: $colorBase;
         padding: 15px 0;
         &:first-child {

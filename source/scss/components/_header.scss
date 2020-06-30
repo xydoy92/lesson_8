@@ -1,4 +1,7 @@
 header {
+    // section {
+    //     display: none !important;
+    // }
     @include column;
     nav {
         display: flex;
@@ -8,6 +11,7 @@ header {
             display: flex;
             align-items: center;
             border-right: 1px solid $colorBorder;
+            border-left: 1px solid $colorBorder;
             padding: 0 20px;
         }
         img {
@@ -15,7 +19,10 @@ header {
         }
     }
 }
-
+.flex {
+    display: flex;
+    flex: 0 1 auto;
+}
 .read-more {
     position: relative;
     width: 34px;
@@ -110,24 +117,7 @@ header {
     padding: 0 30px 0 18px;
     h4 {
         padding-bottom: 9px;
-        font: {
-            weight: 700;
-            size: $sizeName;
-        }
-        color: $colorBase;
-        @include gradient();
-        @supports (-webkit-background-clip: text) {
-            color: transparent;
-            @include gradient();
-            -webkit-background-clip: text;
-        }
-    }
-    p {
-        font: {
-            weight: 400;
-            size: $sizeSubtitle;
-        }
-        color: $colorSubtitle;
+        @include fontGradientProperties($sizeName);
     }
 }
 
@@ -165,28 +155,48 @@ header {
 }
 
 .items {
+    flex: 1 1 auto;
     display: flex;
+    align-items: center;
+    padding-left: 45px;
     overflow-x: auto;
     overflow-y: hidden;
-    width: 100%;
 }
 
 .item {
-    min-width: 165px;
-    padding-left: 20px;
-    padding-right: 50px;
-    &:first-child {
-        padding-left: 45px;
+    flex: 0 0 165px;
+    p {
+        padding-bottom: 9px;
+    }
+    span {
+        @include fontProperties($color: $colorSubtitle);
+        position: relative;
+        padding: 8px;
+        &:first-of-type:before {
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            left: -2px;
+            border: 3px solid transparent;
+            border-bottom: 6px solid $colorTriangle;
+        }
+        &:last-of-type:before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: -2px;
+            border: 3px solid transparent;
+            border-top: 6px solid $colorTaskTitle;
+        }
     }
 }
 
 .add {
+    flex: 0 0 145px;
     @include column;
     justify-content: center;
-    width: 145px;
     padding-left: 6px;
     p {
-        font-size: 12px;
-        font-weight: 700;
+        @include fontGradientProperties($sizeSimpleText, $weightStep*7)
     }
 }

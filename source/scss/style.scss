@@ -1,6 +1,7 @@
 @import "./global/normalize";
 @import "./global/variables";
 @import "./global/mixins";
+@import "./components/text";
 @import "./components/nav";
 @import "./components/header";
 .wrapper {
@@ -9,8 +10,8 @@
 }
 
 .wrapper__inner {
+    flex: 1 1 auto;
     @include column;
-    width: 100%;
 }
 // main
 .row {
@@ -18,14 +19,8 @@
     flex-wrap: wrap;
 }
 
-aside {
-    display: flex;
-    flex-direction: column;
-    min-width: 240px;
-    width: 26%;
-}
 main {
-    width: 100%;
+    padding: 10px;
     background: $colorBackground;
 }
 main section {
@@ -34,13 +29,6 @@ main section {
 }
 .row__nowrap {
     display: flex;
-}
-.chat {
-    height: 100%;
-}
-.socials {
-    height: 220px;
-    background-color: darkmagenta;
 }
 
 .column {
@@ -58,16 +46,36 @@ main section {
     width: 265px;
 }
 .s3 {
-    flex-grow: 1;
-    min-width: 265px;
+    flex: 1 0 265px;
+}
+
+.meow {
+    flex: 0 1 500px;
 }
 
 .s4, .s5, .s6 {
     height: 245px;
 }
 .s5, .s6 {
-    width: 240px;
+    flex: 1 1 240px;
 }
+aside {
+    height: 100%;
+    background: darkred;
+}
+footer {
+    height: 220px;
+    background: darkmagenta;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    min-width: 271px;
+}
+
+
+
 
 @media (max-width: 1200px) {
     .px1200 {
@@ -76,15 +84,31 @@ main section {
     .s3 {
         height: 300px;
     }
-    .s5, .s6 {
-        width: 100%;
+    header {
+        nav {
+            flex-wrap: wrap;
+            justify-content: start;
+            .flex:last-child {
+                margin-left: auto;
+            }
+            .nav__search {
+                order: 1;
+                flex: 1 1 1100px;
+                input {
+                    width: 90%;
+                }
+                button {
+                    right: calc(5% + 13px);
+                }
+            }
+        }
     }
 }
 @media (max-width: 900px) {
     .px900 {
         flex-wrap: wrap;
     }
-    aside {
+    .aside {
         width: 100%;
     }
     .column900px {
@@ -96,8 +120,30 @@ main section {
     .pxcolumn {
         flex-direction: column;
     }
-    .chat {
-        display: none !important;
+    aside {
+        position: fixed;
+        bottom: 10%;
+        right: -255px;
+        height: 50vh;
+        width: 271px;
     }
+    aside:hover {
+        right: 0;
+    }
+    .for-nav {
+        position: fixed;
+    }
+    .sidebar {
+        position: fixed;
+        left: -60px;
+    }
+    .sidebar:hover {
+        left: 0;
+    }
+}
 
+@media (max-width: 700px) {
+    .flex:nth-child(2n+1) {
+        display: none;
+    }
 }

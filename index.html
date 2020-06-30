@@ -10,75 +10,83 @@
 </head>
 <body>
     <div class="wrapper">
-        <nav class="sidebar">
-            <a class="logo" href="#"><span>&nbspW&nbsp</span></a>
-            <div class="sidebar__wrapper">
-                <a href="">
-                    <input type="radio" name="nav__btn" id="nav__btn--1">
-                    <label for="nav__btn--1">                        
-                        <img src="./source/img/nav/home.png" alt="Home">Home                        
-                    </label>
-                </a>
-                <a href="">
-                    <input type="radio" name="nav__btn" id="nav__btn--2">
-                    <label for="nav__btn--2">                        
-                        <img src="./source/img/nav/stactics.png" alt="Stactics">Stactics                        
-                    </label>
-                </a>
-                <a href="">
-                    <input type="radio" name="nav__btn" id="nav__btn--3">
-                    <label for="nav__btn--3">                        
-                        <img src="./source/img/nav/user.png" alt="Users">Users                        
-                    </label>
-                </a>
-                <a href="">
-                    <input type="radio" name="nav__btn" id="nav__btn--4">
-                    <label for="nav__btn--4">                        
-                        <img src="./source/img/nav/settings.png" alt="Settings">Settings                        
-                    </label>
-                </a>
-                <a href="">
-                    <input type="radio" name="nav__btn" id="nav__btn--5">
-                    <label for="nav__btn--5">                        
-                        <img src="./source/img/nav/information.png" alt="Quires">Quires                        
-                    </label>
-                </a>
-                <a href="">
-                    <img src="./source/img/nav/power-button.png" alt="">
-                </a>
-            </div>
-        </nav>
+        <div class="for-nav">
+            <nav class="sidebar">
+                <a class="logo" href="#"><span>&nbspW&nbsp</span></a>
+                <div class="sidebar__wrapper">
+                    <a href="">
+                        <input type="radio" name="nav__btn" id="nav__btn--1">
+                        <label for="nav__btn--1">                        
+                            <img src="./source/img/nav/home.png" alt="Home">Home                        
+                        </label>
+                    </a>
+                    <a href="">
+                        <input type="radio" name="nav__btn" id="nav__btn--2">
+                        <label for="nav__btn--2">                        
+                            <img src="./source/img/nav/stactics.png" alt="Stactics">Stactics                        
+                        </label>
+                    </a>
+                    <a href="">
+                        <input type="radio" name="nav__btn" id="nav__btn--3">
+                        <label for="nav__btn--3">                        
+                            <img src="./source/img/nav/user.png" alt="Users">Users                        
+                        </label>
+                    </a>
+                    <a href="">
+                        <input type="radio" name="nav__btn" id="nav__btn--4">
+                        <label for="nav__btn--4">                        
+                            <img src="./source/img/nav/settings.png" alt="Settings">Settings                        
+                        </label>
+                    </a>
+                    <a href="">
+                        <input type="radio" name="nav__btn" id="nav__btn--5">
+                        <label for="nav__btn--5">                        
+                            <img src="./source/img/nav/information.png" alt="Quires">Quires                        
+                        </label>
+                    </a>
+                    <a href="">
+                        <img src="./source/img/nav/power-button.png" alt="">
+                    </a>
+                </div>
+            </nav>
+        </div>
         <div class="wrapper__inner">
             <header>
                 <nav>
-                    <a href="">
-                        <div class="read-more"><span></span></div>
-                    </a>
-                    <a href="">
-                        <div class="icon icon--folder"></div>
-                    </a>
-                    <a href="">
-                        <div class="icon icon--setup"></div>
-                    </a>                    
+                    <div class="flex">
+                        <a href="">
+                            <div class="read-more"><span></span></div>
+                        </a>
+                        <a href="">
+                            <div class="icon icon--folder"></div>
+                        </a>
+                        <a href="">
+                            <div class="icon icon--setup"></div>
+                        </a>
+                    </div>
                     <div class="nav__search">
                         <input type="search" placeholder="Search Anything Here....">
                         <button></button>
                     </div>
-                    <a href="">
-                        <div class="icon icon--upload"></div>
-                    </a>
-                    <a href="">
-                        <div class="icon icon--email"></div>
-                    </a>
-                    <a href="">
-                        <div class="icon icon--earth"></div>
-                    </a>
-                    <img src="./source/img/avatars/kendall-jenner.jpeg" alt="">
-                    <div class="caption">
-                        <h4>Kendall Jenner</h4>
-                        <p>Cheif Authority</p>
+                    <div class="flex">
+                        <a href="">
+                            <div class="icon icon--upload"></div>
+                        </a>
+                        <a href="">
+                            <div class="icon icon--email"></div>
+                        </a>
+                        <a href="">
+                            <div class="icon icon--earth"></div>
+                        </a>
                     </div>
-                    <div class="burger"></div>
+                    <div class="flex">
+                        <img src="./source/img/avatars/kendall-jenner.jpeg" alt="">
+                        <div class="caption">
+                            <h4>Kendall Jenner</h4>
+                            <h5>Cheif Authority</h5>
+                        </div>
+                        <div class="burger"></div>
+                    </div>
                 </nav>
                 <section class="stactics">
                     <div class="items">
@@ -137,7 +145,7 @@
                         <section class="s3">
                             <p>Loremserunt ut ea ipsa.</p>
                         </section>
-                        <div class="column">
+                        <div class="column meow">
                             <section class="s4">
                                 <p>Lorem ipsum nis animi, odio nesciunt ex nam nobis assumenda qui facilis quos.</p>
                             </section>
@@ -152,14 +160,12 @@
                         </div>
                     </div>
                 </main>
-                <aside>
-                    <div class="chat">
-
-                    </div>
-                    <div class="socials">
-
-                    </div>
-                </aside>
+                <div class="aside">
+                    <aside>
+                    </aside>
+                    <footer>
+                    </footer>
+                </div>
             </div>
         </div>
     </div>

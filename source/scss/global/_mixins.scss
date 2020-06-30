@@ -7,8 +7,16 @@
     flex-direction: column;
 }
 
-@mixin font ($size: $sizeSimpleText, $weight: $weightStep*7, $color: $colorTitle) {
+@mixin fontProperties($size: $sizeSimpleText, $weight: $weightStep*7, $color: $colorTitle) {
     font-size: $size;
     font-weight: $weight;
     color: $color;
+}
+
+@mixin fontGradientProperties($size: $sizeStep*4, $weight: $weightStep*7, $angle: $angleStep*6) {
+    font-size: $size;
+    font-weight: $weight;
+    color: transparent;
+    @include gradient($angle);
+    -webkit-background-clip: text;
 }
