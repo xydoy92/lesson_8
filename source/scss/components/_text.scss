@@ -1,0 +1,24 @@
+
+p {
+    @include fontProperties();
+}
+
+h2 {
+    @include fontGradientProperties();
+}
+
+h3 {
+    @include fontProperties($sizeSectionTitle, $colorTitle);
+}
+
+h4 {
+    @include fontProperties($sizeName);
+}
+
+h5 {
+    @include fontProperties($sizeStep*2, $weightStep*4, $colorSubtitle);
+}
+
+h6 {
+    @include fontProperties($sizeFeedTime, $weightStep*4, $colorFeedTime);
+}
