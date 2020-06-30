@@ -1,7 +1,4 @@
 header {
-    // section {
-    //     display: none !important;
-    // }
     @include column;
     nav {
         display: flex;
@@ -19,10 +16,11 @@ header {
         }
     }
 }
+
 .flex {
     display: flex;
-    flex: 0 1 auto;
 }
+
 .read-more {
     position: relative;
     width: 34px;

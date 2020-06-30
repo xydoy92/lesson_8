@@ -4,6 +4,7 @@
 @import "./components/text";
 @import "./components/nav";
 @import "./components/header";
+@import "./components/main";
 .wrapper {
     display: flex;
     font-family:'Lato', sans-serif;
@@ -19,14 +20,6 @@
     flex-wrap: wrap;
 }
 
-main {
-    padding: 10px;
-    background: $colorBackground;
-}
-main section {
-    margin: 10px;
-    background-color: darkolivegreen;
-}
 .row__nowrap {
     display: flex;
 }

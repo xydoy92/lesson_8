@@ -329,9 +329,6 @@ header nav img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
 }
 
 .read-more {
@@ -604,6 +601,18 @@ header nav img {
   -webkit-background-clip: text;
 }
 
+main {
+  padding: 10px;
+  background: #f0f0f0;
+}
+
+main section {
+  margin: 10px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 6px 6px #c8c8c8;
+          box-shadow: 0 0 6px 6px #c8c8c8;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -630,16 +639,6 @@ header nav img {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-main {
-  padding: 10px;
-  background: #f0f0f0;
-}
-
-main section {
-  margin: 10px;
-  background-color: darkolivegreen;
 }
 
 .row__nowrap {

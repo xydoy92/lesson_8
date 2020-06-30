@@ -1,0 +1,10 @@
+main {
+    padding: 10px;
+    background: $colorBackground;
+    section {
+        margin: 10px;
+        background: $colorBase;
+        box-shadow: 0 0 6px 6px $colorSearch;
+    }
+}
+
