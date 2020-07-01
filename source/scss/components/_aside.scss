@@ -1,4 +1,86 @@
 aside {
     flex: 1 0 auto;
-    background: darkred;
+    @include column;
+    form {
+        display: flex;
+        justify-content: space-between;
+        @include gradient();
+        a {
+            width: 33%;
+        }
+    }
+    label {
+        display: block;
+        height: 48px;
+        &[for="aside__btn-1"] {
+            background: url(../img/chat/users.png) no-repeat center;
+        }
+        &[for="aside__btn-2"] {
+            background: url(../img/chat/chat.png) no-repeat center;
+        }
+        &[for="aside__btn-3"] {
+            background: url(../img/chat/like.png) no-repeat center;
+        }
+    }
 }
+
+.contacts {
+    flex: 1 0 auto;
+    height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: $colorBase;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid $colorBorder;
+    &:last-child {
+        border: none;
+    }
+    img {
+        width: 42px;
+        height: 42px;
+        object-fit: none;
+        object-position: center 15%;
+    }
+    a {
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
+        background: url(../img/chat/tochat.png) no-repeat center;
+    }
+}
+
+.search {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: $colorBackInput;
+    &:after {
+        content: '';
+        position: absolute;
+        right: calc(26% - 19px);
+        width: 19px;
+        height: 19px;
+        background: url(../img/search.png) no-repeat center/cover;
+    }
+    input {
+        flex: 0 1 165px;
+        @include fontProperties($sizeStep*2, $weightStep*3, $colorSubtitle);
+        padding-bottom: 6px;
+        background: $colorBackInput;
+        border: none;
+        border-bottom: 1px solid $colorBorder;
+    }
+    button {
+        width: 19px;
+        height: 19px;
+        border: none;
+        background: transparent url(../img/chat/edit.png) no-repeat center/cover;
+    }
+}
+
