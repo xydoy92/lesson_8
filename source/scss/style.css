@@ -158,14 +158,14 @@ h2 {
   font-size: 20px;
   font-weight: 700;
   color: transparent;
-  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  background-image: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background-image: linear-gradient(270deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
 }
 
 h3 {
   font-size: 14px;
-  font-weight: #777777;
+  font-weight: 700;
   color: #777777;
 }
 
@@ -222,8 +222,8 @@ h6 {
   font-size: 180deg;
   font-weight: 700;
   color: transparent;
-  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  background-image: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background-image: linear-gradient(270deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
 }
 
@@ -236,8 +236,8 @@ h6 {
 }
 
 .sidebar__wrapper {
-  background: -webkit-gradient(linear, left top, left bottom, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(180deg, #fc7858, #fd4e75);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc7858), to(#fd4e75));
+  background-image: linear-gradient(180deg, #fc7858, #fd4e75);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,8 +335,8 @@ header nav img {
   position: relative;
   width: 34px;
   height: 18px;
-  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  background-image: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background-image: linear-gradient(270deg, #fc7858, #fd4e75);
   border-radius: 9px;
 }
 
@@ -373,8 +373,8 @@ header nav img {
 .icon {
   width: 20px;
   height: 100%;
-  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  background-image: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background-image: linear-gradient(270deg, #fc7858, #fd4e75);
   background-clip: content-box;
 }
 
@@ -475,8 +475,8 @@ header nav img {
   font-size: 13px;
   font-weight: 700;
   color: transparent;
-  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  background-image: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background-image: linear-gradient(270deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
 }
 
@@ -596,8 +596,8 @@ header nav img {
   font-size: 12px;
   font-weight: 700;
   color: transparent;
-  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  background-image: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background-image: linear-gradient(270deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
 }
 
@@ -621,8 +621,84 @@ aside {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 26px 0;
   background: #ffffff;
+}
+
+footer h3 {
+  padding-bottom: 30px;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+li {
+  margin: 7px;
+}
+
+li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 55px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30%;
+}
+
+a[href*="rdio"] {
+  background-image: url(../img/logo/rdio.png), linear-gradient(315deg, #6359b0, #b26ae1);
+}
+
+a[href*="css"] {
+  background-image: url(../img/logo/css.png), linear-gradient(315deg, #4bb9c3, #52e7c5);
+}
+
+a[href*="deviantart"] {
+  background-image: url(../img/logo/deviantart.png), linear-gradient(315deg, #ad6a77, #f6b797);
+}
+
+a[href*="xing"] {
+  background-image: url(../img/logo/xing.png), linear-gradient(315deg, #8841af, #708ae6);
+}
+
+a[href*="vimeo"] {
+  background-image: url(../img/logo/vimeo.png), linear-gradient(315deg, #5885e8, #29cddd);
+}
+
+a[href*="vk"] {
+  background-image: url(../img/logo/vk.png), linear-gradient(315deg, #f48982, #fbda89);
 }
 
 .wrapper {

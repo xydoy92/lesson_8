@@ -1,4 +1,41 @@
 footer {
+    @include column;
+    align-items: center;
     padding: 26px 0;
     background: $colorBase;
+    h3 {
+        padding-bottom: 30px;
+    }
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ul {
+    display: flex;
+}
+li {
+    margin: 7px;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55px;
+        height: 55px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 30%;
+    }
+}
+
+@each $nameLogo, $start, $end in (rdio, $gradientCircleStart, $gradientCircleEnd),
+                                (css, $gradientCssStart, $gradientCssEnd),
+                                (deviantart, $gradientDeiantartStart, $gradientDeiantartEnd),
+                                (xing, $gradientHistogramStart, $gradientHistogramEnd),
+                                (vimeo, $gradientVimeoStart, $gradientVimeoEnd),
+                                (vk, $gradientVkStart, $gradientVkEnd) {
+                                    a[href*="#{$nameLogo}"] {
+                                        background-image: url(../img/logo/#{$nameLogo}.png), linear-gradient($angleStep*7, $start, $end);
+                                    }
 }
