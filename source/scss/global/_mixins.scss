@@ -1,5 +1,11 @@
 @mixin gradient($angle: $angleStep*6, $start: $gradientBaseStart, $end: $gradientBaseEnd) {
-    background: linear-gradient($angle, $start, $end);
+    background-image: linear-gradient($angle, $start, $end);
+}
+
+@mixin gradientLogo($angle: $angleStep*7, $start: $gradientCircleStart, $end: $gradientCircleEnd) {
+    background-image: url(../img/logo/rdio.png), linear-gradient($angleStep*7, $gradientCssStart, $gradientCssEnd);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 @mixin column {
