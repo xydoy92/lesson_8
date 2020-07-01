@@ -1,5 +1,5 @@
 @mixin gradient($angle: $angleStep*6, $start: $gradientBaseStart, $end: $gradientBaseEnd) {
-    background-image: linear-gradient($angle, $start, $end);
+    background: linear-gradient($angle, $start, $end);
 }
 
 @mixin gradientLogo($angle: $angleStep*7, $start: $gradientCircleStart, $end: $gradientCircleEnd) {
