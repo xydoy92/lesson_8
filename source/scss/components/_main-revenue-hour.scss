@@ -1,8 +1,6 @@
 .revenue-hour {
-    @include column;
-    justify-content: space-between;
     align-items: center;
-    padding: 30px 70px;
+    padding: 0 40px;
     span {
         @include fontProperties($color: $colorSubtitle);
         position: relative;
