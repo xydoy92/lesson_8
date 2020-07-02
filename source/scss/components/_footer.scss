@@ -1,4 +1,5 @@
 footer {
+    flex: 0 0 auto;
     @include column;
     align-items: center;
     padding: 26px 0;
@@ -6,11 +7,6 @@ footer {
     h3 {
         padding-bottom: 30px;
     }
-}
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 .ul {
     display: flex;

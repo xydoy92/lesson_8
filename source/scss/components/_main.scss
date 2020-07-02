@@ -1,4 +1,7 @@
 main {
+    flex: 10000 1 100px;
+    display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     background: $colorBackground;
     section {
@@ -8,3 +11,32 @@ main {
     }
 }
 
+.revenue-month, .revenue-hour, .feed {
+    min-height: 265px;
+}
+
+.revenue-month {
+    flex: 10000 1 550px;
+}
+
+.revenue-hour, .progress, .shipments {
+    flex: 1 0 auto;
+}
+
+.feed {
+    flex: 10000 1 350px;
+}
+
+.wrapper__small {
+    flex: 1 1 520px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tasks, .progress, .shipments {
+    height: 245px;
+}
+
+.tasks {
+    flex: 1 0 calc(100% - 20px);
+}

@@ -2,12 +2,6 @@
     background: linear-gradient($angle, $start, $end);
 }
 
-@mixin gradientLogo($angle: $angleStep*7, $start: $gradientCircleStart, $end: $gradientCircleEnd) {
-    background-image: url(../img/logo/rdio.png), linear-gradient($angleStep*7, $gradientCssStart, $gradientCssEnd);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 @mixin column {
     display: flex;
     flex-direction: column;
@@ -19,10 +13,10 @@
     color: $color;
 }
 
-@mixin fontGradientProperties($size: $sizeStep*4, $weight: $weightStep*7, $angle: $angleStep*6) {
+@mixin fontGradientProperties($size: $sizeStep*4, $weight: $weightStep*7, $angle: $angleStep*6, $start: $gradientBaseStart, $end: $gradientBaseEnd) {
     font-size: $size;
     font-weight: $weight;
     color: transparent;
-    @include gradient($angle);
+    @include gradient($angle, $start, $end);
     -webkit-background-clip: text;
 }

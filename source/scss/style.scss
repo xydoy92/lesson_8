@@ -18,6 +18,17 @@
     @include column;
 }
 
+.wrapper__middle {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aside {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 .caption {
     display: flex;
     flex-direction: column;
@@ -28,62 +39,16 @@
     }
 }
 
-// main
-.row {
-    display: flex;
-    flex-wrap: wrap;
+@media (min-width: 1400px) {
+    .feed {
+        flex-basis: 40%;
+    }
+    .revenue-month {
+        flex-basis: 70%;
+    }
 }
-
-.row__nowrap {
-    display: flex;
-}
-
-.column {
-    display: flex;
-    flex-flow: column wrap;
-}
-
-.s1, .s2 {
-    height: 265px;
-}
-.s1 {
-    flex-grow: 1;
-}
-.s2 {
-    width: 265px;
-}
-.s3 {
-    flex: 1 0 265px;
-}
-
-.meow {
-    flex: 0 1 500px;
-}
-
-.s4, .s5, .s6 {
-    height: 245px;
-}
-.s5, .s6 {
-    flex: 1 1 240px;
-}
-
-
-.aside {
-    display: flex;
-    flex-direction: column;
-    min-width: 271px;
-}
-
-
-
 
 @media (max-width: 1200px) {
-    .px1200 {
-        flex-direction: column;
-    }
-    .s3 {
-        height: 300px;
-    }
     header {
         nav {
             flex-wrap: wrap;
@@ -95,41 +60,14 @@
                 order: 2;
                 flex: 1 1 1100px;
                 input {
-                    width: 90%;
-                }
-                button {
-                    right: calc(5% + 13px);
+                width: 90%;
                 }
             }
         }
     }
 }
+
 @media (max-width: 900px) {
-    .px900 {
-        flex-wrap: wrap;
-    }
-    .aside {
-        width: 100%;
-    }
-    .column900px {
-        flex-direction: column;
-    }
-    .s2 {
-        width: auto;
-    }
-    .pxcolumn {
-        flex-direction: column;
-    }
-    aside {
-        position: fixed;
-        bottom: 10%;
-        right: -255px;
-        height: 50vh;
-        width: 271px;
-    }
-    aside:hover {
-        right: 0;
-    }
     .for-nav {
         position: fixed;
         z-index: 1;
@@ -154,5 +92,24 @@
     .flex:last-child {
         justify-content: space-between;
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    aside {
+        position: fixed;
+        bottom: 10%;
+        right: -255px;
+        height: 50vh;
+        width: 271px;
+    }
+    aside:hover {
+        right: 0;
+    }
+    footer {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
 }
