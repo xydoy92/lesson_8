@@ -1,0 +1,63 @@
+.revenue-hour {
+    @include column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+    span {
+        @include fontProperties($color: $colorSubtitle);
+        position: relative;
+        padding: 8px;
+        &:first-of-type:before {
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            left: -2px;
+            border: 3px solid transparent;
+            border-bottom: 6px solid $colorTriangle;
+        }
+        &:last-of-type:before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: -2px;
+            border: 3px solid transparent;
+            border-top: 6px solid $colorTaskTitle;
+        }
+    }
+}
+
+.circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    background: $colorSearch url(../img/main/circle-percentage.png) no-repeat center/cover;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 104px;
+        height: 104px;
+        border-radius: 50%;
+        background: $colorBase;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        background: $colorBase;
+        box-shadow: 0 0 3px 3px $colorSearch;
+    }
+    h2 {
+        z-index: 1;
+        @include fontGradientProperties($size: $sizeStep*5, $angle: $angleStep*7, $start: $gradientCircleStart, $end: $gradientCircleEnd)
+    }
+}
