@@ -1,0 +1,48 @@
+.feed {
+    img {
+        width: 42px;
+        height: 42px;
+        object-fit: none;
+        object-position: center 15%;
+    }
+    h6 {
+        padding-top: 13px;
+    }
+    .feeds {
+        flex: 1 0 auto;
+        margin-top: 40px;
+        height: 200px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .feed__item {
+        display: flex;
+        justify-content: space-between;
+    }
+    p {
+        position: relative;
+        margin: 0 0 20px 50px;
+        padding: 20px;
+        font-weight: $weightStep*4;
+        background: $colorBackgroundFeed;
+        border: 1px solid $colorBorder;
+        &:not(:first-child):before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -17px;
+            width: 4px;
+            height: calc(100% + 20px);
+            background: $colorBorder;
+        }
+        &:last-child:before {
+            height: 100%;
+        }
+        &:first-child {
+            margin-left: 20px;
+        }
+    }
+    em {
+        font-weight: $weightStep*8;
+    }
+}
