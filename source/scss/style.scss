@@ -102,6 +102,9 @@
 }
 
 @media (max-width: 600px) {
+    .wrapper__middle {
+        flex-direction: column;
+    }
     aside {
         position: fixed;
         bottom: 10%;
@@ -111,11 +114,5 @@
     }
     aside:hover {
         right: 0;
-    }
-    footer {
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-        }
     }
 }
