@@ -1,0 +1,65 @@
+.shipments {
+    align-items: center;
+    padding: 30px 20px;
+    .shipments__numbers {
+        align-self: stretch;
+        display: flex;
+        justify-content: space-between;
+    }
+    h2 {
+        margin-right: auto;
+    }
+    span {
+        @include fontProperties($color: $colorSubtitle);
+        position: relative;
+        padding: 8px;
+        &:first-of-type:before {
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            left: -2px;
+            border: 3px solid transparent;
+            border-bottom: 6px solid $colorTriangle;
+        }
+        &:last-of-type:before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: -2px;
+            border: 3px solid transparent;
+            border-top: 6px solid $colorTaskTitle;
+        }
+    }   
+}
+
+.usa-map {
+    position: relative;
+    flex: 1 0 115px;
+    align-self: stretch;
+    min-width: 185px;
+    margin: 20px 4px;
+    background: url(../img/main/usa-map.png) no-repeat center/100% 100%;
+    .usa-map__item {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 21px;
+        @include gradient();
+        background-clip: content-box;
+        mask: url(../img/main/placeholder-for-maps.png) no-repeat;
+    }
+}
+
+
+@each $childNumber, $bottom, $left in (1, 63%, 15%),
+                                (2, 77%, 54%),
+                                (3, 63%, 83%),
+                                (4, 30%, 20%),
+                                (5, 51%, 30%),
+                                (6, 28%, 45%),
+                                (7, 30%, 72%) {
+                                    .usa-map__item:nth-child(#{$childNumber}) {
+                                        bottom: $bottom;
+                                        left: calc(#{$left} - 7.5px);
+                                    }
+}
