@@ -1,0 +1,87 @@
+.tasks {
+    h3 {
+        margin-bottom: 15px;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    input:checked + label:before {
+        @include gradient();
+    }
+    p {
+        color: $colorSubtitle;
+    }
+    li:hover {
+        height: 100px;
+        p {
+            overflow: visible;
+        }
+    }
+    ul {
+        flex: 1 1 auto;
+        height: 250px;
+        overflow-x: visible;
+        overflow-y: auto;
+        background: $colorBase;
+    }
+    li {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding: 13px 0;
+        border-bottom: 1px solid $colorBorder;
+    }
+    li > p {
+        margin-left: 30px;
+        height: 12px;
+        overflow: hidden;
+    }
+    li:nth-child(2n) {
+        background: $colorBackgroundFeed;
+    }
+    .clock {
+        flex: 0 0 55px;
+        margin-left: 20px;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -15px;
+            width: 12px;
+            height: 12px;
+            background: url(../img/main/clock.png);
+        }
+    }
+    label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        @include fontProperties($color: $colorTaskTitle);
+        height: 17px;
+        padding-left: 30px;
+        white-space: nowrap;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            width: 15px;
+            height: 15px;
+            background: $colorBase;
+            border-radius: 50%;
+            border: 2px solid $colorBorder;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 9px;
+            width: 3px;
+            height: 6px;
+            border-right: 1px solid $colorBase;
+            border-bottom: 1px solid $colorBase;
+            transform: rotate($angleStep);
+        }
+    }
+}
+

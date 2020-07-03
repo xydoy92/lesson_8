@@ -793,7 +793,7 @@ main section {
   top: 0;
   left: -17px;
   width: 4px;
-  height: calc(100% + 20px);
+  height: calc(100% + 22px);
   background: #f1f1f1;
 }
 
@@ -807,6 +807,121 @@ main section {
 
 .feed em {
   font-weight: 800;
+}
+
+.tasks h3 {
+  margin-bottom: 15px;
+}
+
+.tasks input[type="checkbox"] {
+  display: none;
+}
+
+.tasks input:checked + label:before {
+  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background: linear-gradient(270deg, #fc7858, #fd4e75);
+}
+
+.tasks p {
+  color: #bfbfbf;
+}
+
+.tasks li:hover {
+  height: 100px;
+}
+
+.tasks li:hover p {
+  overflow: visible;
+}
+
+.tasks ul {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  height: 250px;
+  overflow-x: visible;
+  overflow-y: auto;
+  background: #ffffff;
+}
+
+.tasks li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 13px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.tasks li > p {
+  margin-left: 30px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.tasks li:nth-child(2n) {
+  background: #fcfcfc;
+}
+
+.tasks .clock {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 55px;
+          flex: 0 0 55px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.tasks .clock:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 12px;
+  height: 12px;
+  background: url(../img/main/clock.png);
+}
+
+.tasks label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fd566f;
+  height: 17px;
+  padding-left: 30px;
+  white-space: nowrap;
+}
+
+.tasks label:before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #f1f1f1;
+}
+
+.tasks label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 3px;
+  height: 6px;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .progress {
@@ -1348,7 +1463,7 @@ a[href*="vk"] {
   aside {
     position: fixed;
     bottom: 10%;
-    right: -255px;
+    right: -260px;
     height: 50vh;
     width: 271px;
   }
