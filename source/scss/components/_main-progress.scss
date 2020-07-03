@@ -36,6 +36,7 @@
     align-self: stretch;
     display: flex;
     justify-content: space-between;
+    min-width: 144px;
     margin: 30px 0 20px;
     .bar-chart__item {
         position: relative;
