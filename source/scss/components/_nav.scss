@@ -17,6 +17,7 @@
     font: 700 30px 'Deftone Stylus', 'Comic Sans MS', 'Monaco CY', cursive;
     text-align: center;
     background: #ffffff;
+    box-shadow: 0 1px 6px 3px $colorSearch;
     p {
         color: transparent;
         @include fontGradientProperties($size: $sizeStep*6, $angle: $angleStep*4);
