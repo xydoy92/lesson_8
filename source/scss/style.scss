@@ -121,3 +121,18 @@
         right: 0;
     }
 }
+
+@media (min-width: 1370px) {
+    .months {
+        justify-content: space-around;
+        .line-red {
+            width: 100%;
+        }
+        .line-blue {
+            width: 100%;
+        }
+        .line-purple {
+            width: 100%;
+        }
+    }
+}

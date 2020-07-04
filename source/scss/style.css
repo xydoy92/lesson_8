@@ -668,7 +668,7 @@ main section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-bottom: 0;
+  padding-bottom: 15px;
 }
 
 .revenue-month .revenue-month__title {
@@ -710,11 +710,23 @@ main section {
   color: #bfbfbf;
 }
 
-.line-chart__graph {
+.line-chart {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  min-width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 25px;
+}
+
+.line-chart__vertical {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -725,47 +737,70 @@ main section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 25px 0;
+  margin-right: 2vw;
+  margin-bottom: 50px;
 }
 
-.line-chart__graph P {
-  position: relative;
-}
-
-.line-chart__graph P:after {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 60px;
-  width: calc(100% - 60px);
-  height: 1px;
-  background: #c0c0c0;
-}
-
-.line-chart__bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 60px;
-}
-
-.line-chart__bottom .months {
+.line-chart__graph {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   width: 0;
-  padding-bottom: 30px;
-  overflow-x: visible;
+  padding: 5px 0 15px;
+  overflow-x: auto;
   overflow-y: hidden;
 }
 
-.line-chart__bottom p {
-  padding: 0 5px;
+.line-chart__block {
+  height: 38px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.line-chart__block:nth-child(4) {
+  height: 25px;
+}
+
+.months {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.months p {
+  padding: 0 15px;
+}
+
+.months .line-red {
+  content: '';
+  position: absolute;
+  top: -85px;
+  left: 0;
+  width: 579px;
+  height: 50px;
+  background: url(../img/main/line-red.png) no-repeat center/100% 100%, url(../img/main/square-red.png) no-repeat 0% 0%, url(../img/main/square-red.png) no-repeat 6.1% 90%, url(../img/main/square-red.png) no-repeat 20.3% 0%, url(../img/main/square-red.png) no-repeat 40.5% 65%, url(../img/main/square-red.png) no-repeat 65.6% 13%, url(../img/main/square-red.png) no-repeat 78.3% 100%, url(../img/main/square-red.png) no-repeat 95% 17%, url(../img/main/square-red.png) no-repeat 100% 60%;
+  overflow: hidden;
+}
+
+.months .line-blue {
+  content: '';
+  position: absolute;
+  top: -85px;
+  left: 0;
+  width: 579px;
+  height: 36px;
+  background: url(../img/main/line-blue.png) no-repeat center/100% 100%, url(../img/main/square-blue.png) no-repeat 0% 95%, url(../img/main/square-blue.png) no-repeat 10% 47%, url(../img/main/square-blue.png) no-repeat 18% 97%, url(../img/main/square-blue.png) no-repeat 28.5% 0%, url(../img/main/square-blue.png) no-repeat 50% 75%, url(../img/main/square-blue.png) no-repeat 70.1% 25%, url(../img/main/square-blue.png) no-repeat 89.5% 90%, url(../img/main/square-blue.png) no-repeat 100% 30%;
+  overflow: hidden;
+}
+
+.months .line-purple {
+  content: '';
+  position: absolute;
+  top: -74px;
+  left: 0;
+  width: 579px;
+  height: 46px;
+  background: url(../img/main/line-purple.png) no-repeat center/100% 100%, url(../img/main/square-purple.png) no-repeat 0% 0%, url(../img/main/square-purple.png) no-repeat 13.5% 90%, url(../img/main/square-purple.png) no-repeat 20% 0%, url(../img/main/square-purple.png) no-repeat 30% 13%, url(../img/main/square-purple.png) no-repeat 38.3% 73%, url(../img/main/square-purple.png) no-repeat 49.6% 0%, url(../img/main/square-purple.png) no-repeat 58.8% 95%, url(../img/main/square-purple.png) no-repeat 71% 80%, url(../img/main/square-purple.png) no-repeat 86% 100%, url(../img/main/square-purple.png) no-repeat 96.4% 65%, url(../img/main/square-purple.png) no-repeat 100% 80%;
 }
 
 .revenue-hour {
@@ -1589,6 +1624,22 @@ a[href*="vk"] {
   }
   aside:hover {
     right: 0;
+  }
+}
+
+@media (min-width: 1370px) {
+  .months {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .months .line-red {
+    width: 100%;
+  }
+  .months .line-blue {
+    width: 100%;
+  }
+  .months .line-purple {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
