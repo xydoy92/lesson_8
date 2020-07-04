@@ -9,6 +9,12 @@ header {
             align-items: center;
             border-right: 1px solid $colorBorder;
             padding: 20px;
+            &:hover {
+                background: $colorBackground;
+            }
+            &:active {
+                background: $colorSubtitle;
+            }
         }
         img {
             border-right: 1px solid $colorBorder;
@@ -209,6 +215,12 @@ header {
     padding-left: 6px;
     border: none;
     background: $colorBase;
+    &:hover {
+        background: $colorBackground;
+    }
+    &:active {
+        background: $colorSubtitle;
+    }
     p {
         @include fontGradientProperties($sizeSimpleText, $weightStep*7)
     }

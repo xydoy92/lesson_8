@@ -254,6 +254,7 @@ h6 {
 }
 
 .sidebar__wrapper a {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,6 +281,27 @@ h6 {
 
 .sidebar__wrapper a:hover {
   background: #c54556;
+}
+
+.sidebar__wrapper a:hover:after {
+  display: block;
+}
+
+.sidebar__wrapper a:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 3.5px);
+  display: none;
+  width: 7px;
+  height: 7px;
+  background: #c54556;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.sidebar__wrapper a:last-child:hover:after {
+  display: none;
 }
 
 .sidebar__wrapper a img {
@@ -321,6 +343,14 @@ header nav a {
           align-items: center;
   border-right: 1px solid #f1f1f1;
   padding: 20px;
+}
+
+header nav a:hover {
+  background: #f0f0f0;
+}
+
+header nav a:active {
+  background: #bfbfbf;
 }
 
 header nav img {
@@ -594,6 +624,14 @@ header h4 {
   padding-left: 6px;
   border: none;
   background: #ffffff;
+}
+
+.add:hover {
+  background: #f0f0f0;
+}
+
+.add:active {
+  background: #bfbfbf;
 }
 
 .add p {
@@ -1323,7 +1361,29 @@ aside form {
 }
 
 aside form a {
+  position: relative;
   width: 33%;
+}
+
+aside form a:hover {
+  background: #c54556;
+}
+
+aside form a:hover:after {
+  display: block;
+}
+
+aside form a:after {
+  content: '';
+  position: absolute;
+  top: calc(100% - 5px);
+  left: calc(50% - 5px);
+  display: none;
+  width: 7px;
+  height: 7px;
+  background: #c54556;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 aside label {
@@ -1423,6 +1483,7 @@ aside label[for="aside__btn-3"] {
   height: 19px;
   border: none;
   background: transparent url(../img/chat/edit.png) no-repeat center/cover;
+  cursor: pointer;
 }
 
 footer {

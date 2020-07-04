@@ -36,6 +36,7 @@
     @include column;
     flex: auto;
     a {
+        position: relative;
         @include column;
         align-items: center;
         font-size: 10px;
@@ -51,6 +52,23 @@
         &:hover {
             background: #c54556;
         }
+        &:hover:after {
+            display: block;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: calc(100% - 3.5px);
+            display: none;
+            width: 7px;
+            height: 7px;
+            background: #c54556;
+            transform: rotate(45deg);
+        }
+        &:last-child:hover:after {
+            display: none;
+        }
         img {
             display: block;
             margin: 0 auto;
@@ -63,20 +81,9 @@ input[type="radio"] {
     display: none;
 }
 // a:after {
-//     content: '';
-//     position: absolute;
-//     top: 50%;
-//     left: calc(100% - 3.5px);
-//     display: none;
-//     width: 7px;
-//     height: 7px;
-//     background: $colorBase;
-//     transform: rotate(45deg);
+
 // }
 // a:hover:after {
 //     display: block;
 //     background: #c54556;
 // }
-    // a:only-of-type:hover:after {
-    //     display: none;
-    // }
