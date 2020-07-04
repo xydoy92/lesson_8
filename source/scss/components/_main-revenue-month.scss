@@ -1,0 +1,64 @@
+.revenue-month {
+    @include column;
+    padding-bottom: 0;
+    .revenue-month__title {
+        flex: 0 0 auto;
+        display: flex;
+    }
+    h3 {
+        margin-right: auto;
+    }
+    .burger {
+        margin-right: 0;
+    }
+    label {
+        @include fontProperties($color: $colorSubtitle);
+        margin-left: 15px;
+        padding: 7px 0;
+    }
+    input:checked + label {
+        @include gradient();
+        padding: 7px 15px;
+        color: $colorBase;
+        border-radius: 13px;
+    }
+    p {
+        @include fontProperties($color: $colorSubtitle);
+    }
+}
+
+.line-chart__graph {
+    flex: 1 0 auto;
+    min-width: 100px;
+    @include column;
+    justify-content: space-between;
+    margin: 25px 0;
+    P {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            width: calc(100% - 60px);
+            height: 1px;
+            background: $colorSearchAside;
+        }
+    }
+}
+.line-chart__bottom {
+    display: flex;
+    margin-left: 60px;
+    .months {
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: space-around;
+        width: 0;
+        padding-bottom: 30px;
+        overflow-x: visible;
+        overflow-y: hidden;
+    }
+    p {
+        padding: 0 5px;
+    }
+}
