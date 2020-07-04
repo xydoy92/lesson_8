@@ -17,9 +17,10 @@
     font: 700 30px 'Deftone Stylus', 'Comic Sans MS', 'Monaco CY', cursive;
     text-align: center;
     background: #ffffff;
-    span {
+    p {
         color: transparent;
-        @include fontGradientProperties($angleStep*4);
+        @include fontGradientProperties($size: $sizeStep*6, $angle: $angleStep*4);
+        padding-right: 10px;
     }
     &:hover {
         background: $colorBackground;

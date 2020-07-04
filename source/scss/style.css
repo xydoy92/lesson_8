@@ -217,14 +217,15 @@ h6 {
   background: #ffffff;
 }
 
-.logo span {
+.logo p {
   color: transparent;
-  font-size: 180deg;
+  font-size: 30px;
   font-weight: 700;
   color: transparent;
-  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
-  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fc7858), to(#fd4e75));
+  background: linear-gradient(180deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
+  padding-right: 10px;
 }
 
 .logo:hover {
@@ -659,6 +660,114 @@ main section {
           flex: 1 0 calc(100% - 20px);
 }
 
+.revenue-month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 0;
+}
+
+.revenue-month .revenue-month__title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.revenue-month h3 {
+  margin-right: auto;
+}
+
+.revenue-month .burger {
+  margin-right: 0;
+}
+
+.revenue-month label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #bfbfbf;
+  margin-left: 15px;
+  padding: 7px 0;
+}
+
+.revenue-month input:checked + label {
+  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background: linear-gradient(270deg, #fc7858, #fd4e75);
+  padding: 7px 15px;
+  color: #ffffff;
+  border-radius: 13px;
+}
+
+.revenue-month p {
+  font-size: 12px;
+  font-weight: 700;
+  color: #bfbfbf;
+}
+
+.line-chart__graph {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  min-width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 25px 0;
+}
+
+.line-chart__graph P {
+  position: relative;
+}
+
+.line-chart__graph P:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  width: calc(100% - 60px);
+  height: 1px;
+  background: #c0c0c0;
+}
+
+.line-chart__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 60px;
+}
+
+.line-chart__bottom .months {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 0;
+  padding-bottom: 30px;
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+
+.line-chart__bottom p {
+  padding: 0 5px;
+}
+
 .revenue-hour {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -852,13 +961,14 @@ main section {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0;
-  padding: 13px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #f1f1f1;
 }
 
 .tasks li > p {
   margin-left: 30px;
-  height: 12px;
+  padding-top: 3px;
+  height: 15px;
   overflow: hidden;
 }
 
@@ -870,15 +980,22 @@ main section {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 55px;
           flex: 0 0 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 20px;
   position: relative;
+  overflow: visible;
 }
 
 .tasks .clock:before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -15px;
+  top: 3px;
+  left: -17px;
   width: 12px;
   height: 12px;
   background: url(../img/main/clock.png);
@@ -893,7 +1010,7 @@ main section {
       -ms-flex-align: center;
           align-items: center;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   color: #fd566f;
   height: 17px;
   padding-left: 30px;
@@ -914,12 +1031,12 @@ main section {
 .tasks label:after {
   content: '';
   position: absolute;
-  top: 5px;
+  top: 4px;
   left: 9px;
   width: 3px;
   height: 6px;
-  border-right: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -1087,8 +1204,8 @@ main section {
   background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
   background: linear-gradient(270deg, #fc7858, #fd4e75);
   background-clip: content-box;
-  -webkit-mask: url(../img/main/placeholder-for-maps.png) no-repeat;
-          mask: url(../img/main/placeholder-for-maps.png) no-repeat;
+  -webkit-mask: url(../img/main/placeholder-for-maps.png);
+          mask: url(../img/main/placeholder-for-maps.png);
 }
 
 .usa-map__item:nth-child(1) {
@@ -1450,6 +1567,9 @@ a[href*="vk"] {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 100%;
+  }
+  .revenue-month__title label {
+    display: none;
   }
 }
 

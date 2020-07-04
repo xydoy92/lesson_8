@@ -46,7 +46,7 @@
         height: 21px;
         @include gradient();
         background-clip: content-box;
-        mask: url(../img/main/placeholder-for-maps.png) no-repeat;
+        mask: url(../img/main/placeholder-for-maps.png);
     }
 }
 

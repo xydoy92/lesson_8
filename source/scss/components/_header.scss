@@ -69,21 +69,27 @@ header {
 .icon--folder {
     mask: url(../img/header/folder.png) no-repeat center;
 }
+
 .icon--setup {
     mask: url(../img/header/setup.png) no-repeat center;
 }
+
 .icon--upload {
     mask: url(../img/header/upload.png) no-repeat center;
 }
+
 .icon--email {
     mask: url(../img/header/email.png) no-repeat center;
 }
+
 .icon--earth {
     mask: url(../img/header/earth.png) no-repeat center;
 }
+
 ::placeholder {
     color: $colorSearch;
 }
+
 .nav__search {
     position: relative;
     flex: 1 0 auto;
