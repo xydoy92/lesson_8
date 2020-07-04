@@ -8,7 +8,6 @@ header {
             display: flex;
             align-items: center;
             border-right: 1px solid $colorBorder;
-            border-left: 1px solid $colorBorder;
             padding: 20px;
         }
         img {
@@ -84,6 +83,20 @@ header {
 
 .icon--earth {
     mask: url(../img/header/earth.png) no-repeat center;
+}
+
+.red-mark {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 16px);
+        right: calc(50% - 16px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        @include gradient();
+    }
 }
 
 ::placeholder {
@@ -194,6 +207,8 @@ header {
     @include column;
     justify-content: center;
     padding-left: 6px;
+    border: none;
+    background: $colorBase;
     p {
         @include fontGradientProperties($sizeSimpleText, $weightStep*7)
     }
