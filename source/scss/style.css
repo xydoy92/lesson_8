@@ -253,6 +253,31 @@ h6 {
           flex: auto;
 }
 
+.sidebar__wrapper label {
+  display: block;
+  padding-top: 28px;
+}
+
+.sidebar__wrapper label[for="nav__btn--1"] {
+  background: url(../img/nav/home.png) no-repeat center top;
+}
+
+.sidebar__wrapper label[for="nav__btn--2"] {
+  background: url(../img/nav/stactics.png) no-repeat center top;
+}
+
+.sidebar__wrapper label[for="nav__btn--3"] {
+  background: url(../img/nav/user.png) no-repeat center top;
+}
+
+.sidebar__wrapper label[for="nav__btn--4"] {
+  background: url(../img/nav/settings.png) no-repeat center top;
+}
+
+.sidebar__wrapper label[for="nav__btn--5"] {
+  background: url(../img/nav/information.png) no-repeat center top;
+}
+
 .sidebar__wrapper a {
   position: relative;
   display: -webkit-box;
@@ -268,6 +293,12 @@ h6 {
   font-size: 10px;
   color: #ffffff;
   padding: 15px 0;
+}
+
+.sidebar__wrapper a .power {
+  width: 20px;
+  height: 20px;
+  background: url(../img/nav/power-button.png) no-repeat center;
 }
 
 .sidebar__wrapper a:first-child {
@@ -302,12 +333,6 @@ h6 {
 
 .sidebar__wrapper a:last-child:hover:after {
   display: none;
-}
-
-.sidebar__wrapper a img {
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 10px;
 }
 
 input[type="radio"] {
