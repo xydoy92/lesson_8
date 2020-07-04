@@ -215,6 +215,8 @@ h6 {
   font: 700 30px 'Deftone Stylus', 'Comic Sans MS', 'Monaco CY', cursive;
   text-align: center;
   background: #ffffff;
+  -webkit-box-shadow: 0 1px 6px 3px #c8c8c8;
+          box-shadow: 0 1px 6px 3px #c8c8c8;
 }
 
 .logo p {
@@ -318,7 +320,6 @@ header nav a {
       -ms-flex-align: center;
           align-items: center;
   border-right: 1px solid #f1f1f1;
-  border-left: 1px solid #f1f1f1;
   padding: 20px;
 }
 
@@ -411,6 +412,22 @@ header h4 {
 .icon--earth {
   -webkit-mask: url(../img/header/earth.png) no-repeat center;
           mask: url(../img/header/earth.png) no-repeat center;
+}
+
+.red-mark {
+  position: relative;
+}
+
+.red-mark:after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 16px);
+  right: calc(50% - 16px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
+  background: linear-gradient(270deg, #fc7858, #fd4e75);
 }
 
 ::-webkit-input-placeholder {
@@ -575,6 +592,8 @@ header h4 {
       -ms-flex-pack: center;
           justify-content: center;
   padding-left: 6px;
+  border: none;
+  background: #ffffff;
 }
 
 .add p {
@@ -613,8 +632,8 @@ main section {
   margin: 10px;
   padding: 30px;
   background: #ffffff;
-  -webkit-box-shadow: 0 0 6px 6px #c8c8c8;
-          box-shadow: 0 0 6px 6px #c8c8c8;
+  -webkit-box-shadow: 2px 2px 6px 3px #c8c8c8;
+          box-shadow: 2px 2px 6px 3px #c8c8c8;
 }
 
 .revenue-month, .revenue-hour, .feed {
@@ -1568,6 +1587,9 @@ a[href*="vk"] {
         -ms-flex: 1 1 1100px;
             flex: 1 1 1100px;
   }
+  header nav .nav__search:after {
+    right: calc(5% + 15px);
+  }
   header nav .nav__search input {
     width: 90%;
   }
@@ -1595,7 +1617,7 @@ a[href*="vk"] {
     height: 50px;
   }
   .flex:nth-child(2n+1) a {
-    padding: 0 calc((100vw - 146px)/12);
+    padding: 0 calc((100vw - 157px)/12);
   }
   .flex:last-child {
     -webkit-box-pack: justify;
