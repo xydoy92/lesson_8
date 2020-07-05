@@ -1,7 +1,8 @@
 @import "./global/normalize";
 @import "./global/variables";
 @import "./global/mixins";
-@import "./components/text";
+@import "./global/placeholder-selectors";
+@import "./global/text";
 @import "./components/nav";
 @import "./components/header";
 @import "./components/main";
@@ -13,6 +14,9 @@
     @import "./components/main-shipments";
 @import "./components/aside";
 @import "./components/footer";
+input[type="radio"] {
+    display: none;
+}
 
 .wrapper {
     display: flex;
@@ -83,7 +87,8 @@
     }
     .sidebar {
         position: fixed;
-        left: -60px;
+        left: -45px;
+        border-right: 20px solid transparent;
     }
     .sidebar:hover {
         left: 0;
@@ -112,13 +117,20 @@
 @media (max-width: 600px) {
     .wrapper__middle {
         flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .tasks {
+        li:hover {
+            height: 200px;
+        }
     }
     aside {
         position: fixed;
         bottom: 10%;
-        right: -260px;
+        right: -246px;
         height: 50vh;
         width: 271px;
+        border-left: 20px solid transparent;
     }
     aside:hover {
         right: 0;

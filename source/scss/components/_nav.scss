@@ -81,13 +81,11 @@
             display: block;
         }
         &:after {
-            content: '';
-            position: absolute;
+            @extend %absPosition;
             top: 50%;
             left: calc(100% - 3.5px);
             display: none;
-            width: 7px;
-            height: 7px;
+            @include square(4px);
             background: #c54556;
             transform: rotate(45deg);
         }
@@ -95,8 +93,4 @@
             display: none;
         }
     }
-}
-
-input[type="radio"] {
-    display: none;
 }

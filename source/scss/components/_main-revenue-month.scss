@@ -65,8 +65,7 @@
         padding: 0 15px;
     }
     .line-red {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         top: -85px;
         left: 0;
         width: 579px;
@@ -83,8 +82,7 @@
         overflow: hidden;
     }
     .line-blue {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         top: -85px;
         left: 0;
         width: 579px;
@@ -101,8 +99,7 @@
         overflow: hidden;
     }
     .line-purple {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         top: -74px;
         left: 0;
         width: 579px;

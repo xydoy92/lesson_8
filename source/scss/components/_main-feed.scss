@@ -1,7 +1,6 @@
 .feed {
     img {
-        width: 42px;
-        height: 42px;
+        @include square(42px);
         object-fit: none;
         object-position: center 15%;
     }
@@ -27,8 +26,7 @@
         background: $colorBackgroundFeed;
         border: 1px solid $colorBorder;
         &:not(:first-child):before {
-            content: '';
-            position: absolute;
+            @extend %absPosition;
             top: 0;
             left: -17px;
             width: 4px;

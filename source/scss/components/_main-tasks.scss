@@ -48,12 +48,10 @@
         position: relative;
         overflow: visible;
         &:before {
-            content: '';
-            position: absolute;
+            @extend %absPosition;
             top: 3px;
             left: -17px;
-            width: 12px;
-            height: 12px;
+            @include square(12px);
             background: url(../img/main/clock.png);
         }
     }
@@ -66,18 +64,14 @@
         padding-left: 30px;
         white-space: nowrap;
         &:before {
-            content: '';
-            position: absolute;
+            @extend %absPosition;
             left: 2px;
-            width: 15px;
-            height: 15px;
+            @include circle(15px);
             background: $colorBase;
-            border-radius: 50%;
             border: 2px solid $colorBorder;
         }
         &:after {
-            content: '';
-            position: absolute;
+            @extend %absPosition;
             top: 4px;
             left: 9px;
             width: 3px;

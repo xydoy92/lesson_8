@@ -16,13 +16,11 @@ aside {
                 display: block;
             }
             &:after {
-                content: '';
-                position: absolute;
+                @extend %absPosition;
                 top: calc(100% - 5px);
                 left: calc(50% - 5px);
                 display: none;
-                width: 7px;
-                height: 7px;
+                @include square(7px);
                 background: #c54556;
                 transform: rotate(45deg);
             }
@@ -31,15 +29,11 @@ aside {
     label {
         display: block;
         height: 48px;
-        &[for="aside__btn-1"] {
-            background: url(../img/chat/users.png) no-repeat center;
-        }
-        &[for="aside__btn-2"] {
-            background: url(../img/chat/chat.png) no-repeat center;
-        }
-        &[for="aside__btn-3"] {
-            background: url(../img/chat/like.png) no-repeat center;
-        }
+        @include forButtonsAside(users);
+        @include forButtonsAside(chat);
+        @include forButtonsAside(like);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 
@@ -60,14 +54,12 @@ aside {
         border: none;
     }
     img {
-        width: 42px;
-        height: 42px;
+        @include square(42px);
         object-fit: none;
         object-position: center 15%;
     }
     a {
-        width: 20px;
-        height: 20px;
+        @include square(20px);
         margin-left: auto;
         background: url(../img/chat/tochat.png) no-repeat center;
     }
@@ -80,11 +72,9 @@ aside {
     padding: 15px 20px;
     background: $colorBackInput;
     &:after {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         right: calc(26% - 19px);
-        width: 19px;
-        height: 19px;
+        @include square(19px);
         background: url(../img/search.png) no-repeat center/cover;
     }
     input {
@@ -96,8 +86,7 @@ aside {
         border-bottom: 1px solid $colorBorder;
     }
     button {
-        width: 19px;
-        height: 19px;
+        @include square(19px);
         border: none;
         background: transparent url(../img/chat/edit.png) no-repeat center/cover;
         cursor: pointer;

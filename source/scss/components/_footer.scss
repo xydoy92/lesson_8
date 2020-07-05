@@ -17,11 +17,9 @@ li {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 55px;
-        height: 55px;
+        @include circle(55px, 30%);
         background-repeat: no-repeat;
         background-position: center;
-        border-radius: 30%;
     }
 }
 

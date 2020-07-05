@@ -30,77 +30,25 @@ header {
 }
 
 .read-more {
-    position: relative;
     width: 34px;
     height: 18px;
     @include gradient();
     border-radius: 9px;
-    span {
-        position: relative;
-        display: block;
-        width: 6px;
-        height: 6px;
-        margin: 6px auto;
-        border-radius: 3px;
-        background: $colorBase;
-        &:before {
-            content: '';
-            position: absolute;
-            right: 8px;
-            width: 6px;
-            height: 6px;
-            border-radius: 3px;
-            background: $colorBase;
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            left: 8px;
-            width: 6px;
-            height: 6px;
-            border-radius: 3px;
-            background: $colorBase;
-        }
-    }
 }
 
-.icon {
-    width: 20px;
-    height: 100%;
-    @include gradient();
-    background-clip: content-box;
-}
-
-.icon--folder {
-    mask: url(../img/header/folder.png) no-repeat center;
-}
-
-.icon--setup {
-    mask: url(../img/header/setup.png) no-repeat center;
-}
-
-.icon--upload {
-    mask: url(../img/header/upload.png) no-repeat center;
-}
-
-.icon--email {
-    mask: url(../img/header/email.png) no-repeat center;
-}
-
-.icon--earth {
-    mask: url(../img/header/earth.png) no-repeat center;
-}
+@include forButtonsHeader(folder);
+@include forButtonsHeader(setup);
+@include forButtonsHeader(upload);
+@include forButtonsHeader(email);
+@include forButtonsHeader(earth);
 
 .red-mark {
     position: relative;
     &:after {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         top: calc(50% - 16px);
         right: calc(50% - 16px);
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
+        @include circle(6px);
         @include gradient();
     }
 }
@@ -117,11 +65,9 @@ header {
     align-items: center;
     border-right: 1px solid $colorBorder;
     &:after {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         right: calc(50% - 137px);
-        width: 16px;
-        height: 16px;
+        @include circle(16px);
         background: url(../img/search.png) no-repeat center/cover;
     }
     input {
@@ -138,27 +84,19 @@ header {
 .burger {
     position: relative;
     align-self: center;
-    width: 4px;
-    height: 4px;
+    @include circle(4px);
     margin: 0 19px;
-    border-radius: 50%;
     background: $colorSubtitle;
     &:before {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         top: -6px;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
+        @include circle(4px);
         background: $colorSubtitle;
     }
     &:after {
-        content: '';
-        position: absolute;
+        @extend %absPosition;
         top: 6px;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
+        @include circle(4px);
         background: $colorSubtitle;
     }
 }
@@ -184,27 +122,6 @@ header {
     flex: 0 0 165px;
     p {
         padding-bottom: 9px;
-    }
-    span {
-        @include fontProperties($color: $colorSubtitle);
-        position: relative;
-        padding: 8px;
-        &:first-of-type:before {
-            content: '';
-            position: absolute;
-            bottom: 12px;
-            left: -2px;
-            border: 3px solid transparent;
-            border-bottom: 6px solid $colorTriangle;
-        }
-        &:last-of-type:before {
-            content: '';
-            position: absolute;
-            top: 12px;
-            left: -2px;
-            border: 3px solid transparent;
-            border-top: 6px solid $colorTaskTitle;
-        }
     }
 }
 

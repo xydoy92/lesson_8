@@ -2,6 +2,16 @@
     background: linear-gradient($angle, $start, $end);
 }
 
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin circle($size, $rounded: 50%) {
+    @include square($size);
+    border-radius: $rounded;
+}
+
 @mixin column {
     display: flex;
     flex-direction: column;
@@ -19,4 +29,31 @@
     color: transparent;
     @include gradient($angle, $start, $end);
     -webkit-background-clip: text;
+}
+
+@mixin forSpan($upDown, $color) {
+    left: -2px;
+    border: 3px solid transparent;
+    border-#{$upDown}: 6px solid $color;
+}
+
+@mixin forButtonHeader {
+    @include circle(6px);
+    background: $colorBase;
+}
+
+@mixin forButtonsAside($nameButton) {
+    &[for*="#{$nameButton}"] {
+        background-image: url(../img/chat/#{$nameButton}.png);
+    }
+}
+
+@mixin forButtonsHeader($nameButton) {
+    .icon--#{$nameButton} {
+        width: 20px;
+        height: 100%;
+        @include gradient();
+        background-clip: content-box;
+        mask: url(../img/header/#{$nameButton}.png) no-repeat center;
+    }
 }
