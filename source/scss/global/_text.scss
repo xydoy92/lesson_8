@@ -1,0 +1,55 @@
+p {
+    @include fontProperties();
+}
+
+h2 {
+    @include fontGradientProperties();
+}
+
+h3 {
+    @include fontProperties($size: $sizeSectionTitle, $color: $colorTitle);
+}
+
+h4 {
+    @include fontProperties($sizeName);
+}
+
+h5 {
+    @include fontProperties($sizeStep*2, $weightStep*4, $colorSubtitle);
+}
+
+h6 {
+    @include fontProperties($sizeFeedTime, $weightStep*4, $colorFeedTime);
+}
+
+span {
+    @include fontProperties($color: $colorSubtitle);
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    &:first-of-type:before {
+        @extend %absPosition;
+        @include forSpan(bottom, $colorTriangle);
+    }
+    &:last-of-type:before {
+        @extend %absPosition;
+        @include forSpan(top, $colorTaskTitle);
+    }
+}
+
+i {
+    @include forButtonHeader;
+    position: relative;
+    display: block;
+    margin: 6px auto;
+    &:before {
+        @extend %absPosition;
+        @include forButtonHeader;
+        right: 8px;
+    }
+    &:after {
+        @extend %absPosition;
+        @include forButtonHeader;
+        left: 8px;
+    }
+}
