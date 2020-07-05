@@ -91,10 +91,14 @@ textarea {overflow: auto;}
 
 [type="search"] {-webkit-appearance: textfield; outline-offset: -2px;}
 
-/* Remove the inner padding in Chrome and Safari on macOS. */
+/* Remove the inner padding and the cancel button in Chrome and Safari on macOS. */
 
-[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+-webkit-appearance: none;}
 
 /* Add the correct display in IE 10+. */
 
 template, [hidden] {display: none;}
+
+
+

@@ -138,8 +138,8 @@ textarea {
   outline-offset: -2px;
 }
 
-/* Remove the inner padding in Chrome and Safari on macOS. */
-[type="search"]::-webkit-search-decoration {
+/* Remove the inner padding and the cancel button in Chrome and Safari on macOS. */
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
