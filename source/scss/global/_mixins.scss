@@ -48,6 +48,12 @@
     }
 }
 
+@mixin forButtonsNav($nameButton) {
+    &[for*="#{$nameButton}"] {
+        background-image: url(../img/nav/#{$nameButton}.png);
+    }
+}
+
 @mixin forButtonsHeader($nameButton) {
     .icon--#{$nameButton} {
         width: 20px;

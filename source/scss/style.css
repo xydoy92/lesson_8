@@ -308,26 +308,28 @@ i:after {
 .sidebar__wrapper label {
   display: block;
   padding-top: 28px;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
-.sidebar__wrapper label[for="nav__btn--1"] {
-  background: url(../img/nav/home.png) no-repeat center top;
+.sidebar__wrapper label[for*="home"] {
+  background-image: url(../img/nav/home.png);
 }
 
-.sidebar__wrapper label[for="nav__btn--2"] {
-  background: url(../img/nav/stactics.png) no-repeat center top;
+.sidebar__wrapper label[for*="stactics"] {
+  background-image: url(../img/nav/stactics.png);
 }
 
-.sidebar__wrapper label[for="nav__btn--3"] {
-  background: url(../img/nav/user.png) no-repeat center top;
+.sidebar__wrapper label[for*="user"] {
+  background-image: url(../img/nav/user.png);
 }
 
-.sidebar__wrapper label[for="nav__btn--4"] {
-  background: url(../img/nav/settings.png) no-repeat center top;
+.sidebar__wrapper label[for*="settings"] {
+  background-image: url(../img/nav/settings.png);
 }
 
-.sidebar__wrapper label[for="nav__btn--5"] {
-  background: url(../img/nav/information.png) no-repeat center top;
+.sidebar__wrapper label[for*="information"] {
+  background-image: url(../img/nav/information.png);
 }
 
 .sidebar__wrapper a {

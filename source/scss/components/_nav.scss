@@ -38,21 +38,13 @@
     label {
         display: block;
         padding-top: 28px;
-        &[for="nav__btn--1"] {
-            background: url(../img/nav/home.png) no-repeat center top;
-        }
-        &[for="nav__btn--2"] {
-            background: url(../img/nav/stactics.png) no-repeat center top;
-        }
-        &[for="nav__btn--3"] {
-            background: url(../img/nav/user.png) no-repeat center top;
-        }
-        &[for="nav__btn--4"] {
-            background: url(../img/nav/settings.png) no-repeat center top;
-        }
-        &[for="nav__btn--5"] {
-            background: url(../img/nav/information.png) no-repeat center top;
-        }
+        background-repeat: no-repeat;
+        background-position: center top;
+        @include forButtonsNav(home);
+        @include forButtonsNav(stactics);
+        @include forButtonsNav(user);
+        @include forButtonsNav(settings);
+        @include forButtonsNav(information);
     }
 
     a {
