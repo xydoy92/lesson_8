@@ -17,7 +17,7 @@ aside {
             }
             &:after {
                 @extend %absPosition;
-                top: calc(100% - 5px);
+                top: calc(100% - 3.5px);
                 left: calc(50% - 5px);
                 display: none;
                 @include square(7px);

@@ -374,8 +374,8 @@ i:after {
   top: 50%;
   left: calc(100% - 3.5px);
   display: none;
-  width: 4px;
-  height: 4px;
+  width: 7px;
+  height: 7px;
   background: #c54556;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -1298,7 +1298,7 @@ aside form a:hover:after {
 }
 
 aside form a:after {
-  top: calc(100% - 5px);
+  top: calc(100% - 3.5px);
   left: calc(50% - 5px);
   display: none;
   width: 7px;
