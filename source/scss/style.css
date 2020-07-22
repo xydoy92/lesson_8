@@ -148,7 +148,7 @@ template, [hidden] {
   display: none;
 }
 
-span:first-of-type:before, span:last-of-type:before, i:before, i:after, .sidebar__wrapper a:after, .red-mark:after, .nav__search:after, .burger:before, .burger:after, .months .line-red, .months .line-blue, .months .line-purple, .circle:before, .circle:after, .feed p:not(:first-child):before, .tasks .clock:before, .tasks label:before, .tasks label:after, .bar-chart .bar-chart__item:after, .usa-map .usa-map__item, aside form a:after, .search:after {
+span:first-of-type:before, span:last-of-type:before, i:before, i:after, .sidebar__wrapper a:after, .red-mark:after, .nav__search:after, .burger:before, .burger:after, .months .line-red, .months .line-blue, .months .line-purple, .circle:before, .circle:after, .feed p:not(:first-child):before, .tasks .clock:before, .tasks label:before, .tasks label:after, .bar-chart .bar-chart__item:after, .usa-map .usa-map__item, aside .aside-tabs a:after, .search:after {
   content: '';
   position: absolute;
 }
@@ -166,6 +166,7 @@ h2 {
   background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
   background: linear-gradient(270deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 h3 {
@@ -251,7 +252,8 @@ i:after {
   top: 0;
   left: 0;
   width: 70px;
-  height: 100vh;
+  height: 100%;
+  display: inline-block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,6 +281,7 @@ i:after {
   background: -webkit-gradient(linear, left top, left bottom, from(#fc7858), to(#fd4e75));
   background: linear-gradient(180deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
+  background-clip: text;
   padding-right: 10px;
 }
 
@@ -305,35 +308,7 @@ i:after {
           flex: auto;
 }
 
-.sidebar__wrapper label {
-  display: block;
-  padding-top: 28px;
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
-.sidebar__wrapper label[for*="home"] {
-  background-image: url(../img/nav/home.png);
-}
-
-.sidebar__wrapper label[for*="stactics"] {
-  background-image: url(../img/nav/stactics.png);
-}
-
-.sidebar__wrapper label[for*="user"] {
-  background-image: url(../img/nav/user.png);
-}
-
-.sidebar__wrapper label[for*="settings"] {
-  background-image: url(../img/nav/settings.png);
-}
-
-.sidebar__wrapper label[for*="information"] {
-  background-image: url(../img/nav/information.png);
-}
-
 .sidebar__wrapper a {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -341,12 +316,42 @@ i:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 38px;
   font-size: 10px;
   color: #ffffff;
   padding: 15px 0;
+}
+
+.sidebar__wrapper a[href*="home"] > em {
+  background-image: url(../img/nav/home.png);
+}
+
+.sidebar__wrapper a[href*="stactics"] > em {
+  background-image: url(../img/nav/stactics.png);
+}
+
+.sidebar__wrapper a[href*="user"] > em {
+  background-image: url(../img/nav/user.png);
+}
+
+.sidebar__wrapper a[href*="settings"] > em {
+  background-image: url(../img/nav/settings.png);
+}
+
+.sidebar__wrapper a[href*="information"] > em {
+  background-image: url(../img/nav/information.png);
+}
+
+.sidebar__wrapper a em {
+  padding-top: 28px;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 .sidebar__wrapper a .power {
@@ -365,11 +370,15 @@ i:after {
 }
 
 .sidebar__wrapper a:hover {
-  background: #c54556;
+  background: #e0545e;
 }
 
-.sidebar__wrapper a:hover:after {
+.sidebar__wrapper a:hover:after, .sidebar__wrapper a:target:after {
   display: block;
+}
+
+.sidebar__wrapper a:target:after, .sidebar__wrapper a:target {
+  background: #c54556;
 }
 
 .sidebar__wrapper a:after {
@@ -378,7 +387,7 @@ i:after {
   display: none;
   width: 7px;
   height: 7px;
-  background: #c54556;
+  background: #e0545e;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -437,9 +446,10 @@ header h4 {
   background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
   background: linear-gradient(270deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
-.flex {
+.header__nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -667,6 +677,7 @@ header h4 {
   background: -webkit-gradient(linear, right top, left top, from(#fc7858), to(#fd4e75));
   background: linear-gradient(270deg, #fc7858, #fd4e75);
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 main {
@@ -935,6 +946,7 @@ main section {
   color: transparent;
   background: linear-gradient(315deg, #6359b0, #b26ae1);
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .feed img {
@@ -1016,10 +1028,15 @@ main section {
 }
 
 .tasks li:hover {
-  height: 100px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.tasks li:hover p {
+.tasks li:hover p:first-of-type {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  height: auto;
   overflow: visible;
 }
 
@@ -1129,6 +1146,7 @@ main section {
   background: -webkit-gradient(linear, right top, left top, from(#8841af), to(#708ae6));
   background: linear-gradient(270deg, #8841af, #708ae6);
   -webkit-background-clip: text;
+  background-clip: text;
   padding-bottom: 10px;
 }
 
@@ -1275,7 +1293,7 @@ aside {
           flex-direction: column;
 }
 
-aside form {
+aside .aside-tabs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1286,47 +1304,52 @@ aside form {
   background: linear-gradient(270deg, #fc7858, #fd4e75);
 }
 
-aside form a {
+aside .aside-tabs a {
   position: relative;
   width: 33%;
 }
 
-aside form a:hover {
+aside .aside-tabs a[href*="users"] > em {
+  background-image: url(../img/chat/users.png);
+}
+
+aside .aside-tabs a[href*="like"] > em {
+  background-image: url(../img/chat/like.png);
+}
+
+aside .aside-tabs a[href*="chat"] > em {
+  background-image: url(../img/chat/chat.png);
+}
+
+aside .aside-tabs a:hover {
+  background: #e0545e;
+}
+
+aside .aside-tabs a:target:after, aside .aside-tabs a:target {
   background: #c54556;
 }
 
-aside form a:hover:after {
+aside .aside-tabs a:hover:after, aside .aside-tabs a:target:after {
   display: block;
 }
 
-aside form a:after {
+aside .aside-tabs a:after {
   top: calc(100% - 3.5px);
   left: calc(50% - 5px);
   display: none;
   width: 7px;
   height: 7px;
-  background: #c54556;
+  background: #e0545e;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-aside label {
+aside .aside-tabs a em {
   display: block;
+  width: 100%;
   height: 48px;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-aside label[for*="users"] {
-  background-image: url(../img/chat/users.png);
-}
-
-aside label[for*="chat"] {
-  background-image: url(../img/chat/chat.png);
-}
-
-aside label[for*="like"] {
-  background-image: url(../img/chat/like.png);
 }
 
 .contacts {
@@ -1491,6 +1514,8 @@ input[type="radio"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
   font-family: 'Lato', sans-serif;
 }
 
@@ -1565,7 +1590,7 @@ input[type="radio"] {
         -ms-flex-pack: start;
             justify-content: start;
   }
-  header nav .flex:last-child {
+  header nav .header__nav:last-child {
     margin-left: auto;
   }
   header nav .nav__search {
@@ -1600,16 +1625,16 @@ input[type="radio"] {
 }
 
 @media (max-width: 700px) {
-  .flex:nth-child(2n+1) {
+  .header__nav:nth-child(2n+1) {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
     height: 50px;
   }
-  .flex:nth-child(2n+1) a {
+  .header__nav:nth-child(2n+1) a {
     padding: 0 calc((100vw - 157px)/12);
   }
-  .flex:last-child {
+  .header__nav:last-child {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -1628,9 +1653,6 @@ input[type="radio"] {
             flex-direction: column;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-  }
-  .tasks li:hover {
-    height: 200px;
   }
   aside {
     position: fixed;

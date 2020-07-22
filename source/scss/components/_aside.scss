@@ -2,17 +2,25 @@ aside {
     z-index: 1;
     flex: 1 0 auto;
     @include column;
-    form {
+    .aside-tabs {
         display: flex;
         justify-content: space-between;
         @include gradient();
         a {
-            position: relative;
-            width: 33%;
+			position: relative;
+			width: 33%;
+			@include forAnchorsAside(users);
+			@include forAnchorsAside(like);
+			@include forAnchorsAside(chat);
             &:hover {
+				background: #e0545e;
+			}
+			&:target:after,
+			&:target {
                 background: #c54556;
-            }
-            &:hover:after {
+			}
+			&:hover:after,
+			&:target:after {
                 display: block;
             }
             &:after {
@@ -21,19 +29,17 @@ aside {
                 left: calc(50% - 5px);
                 display: none;
                 @include square(7px);
-                background: #c54556;
+				background: #e0545e;
                 transform: rotate(45deg);
-            }
+			}
+			em {
+				display: block;
+				width: 100%;
+				height: 48px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
         }
-    }
-    label {
-        display: block;
-        height: 48px;
-        @include forButtonsAside(users);
-        @include forButtonsAside(chat);
-        @include forButtonsAside(like);
-        background-repeat: no-repeat;
-        background-position: center;
     }
 }
 

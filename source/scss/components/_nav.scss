@@ -1,5 +1,5 @@
 .for-nav {
-    flex: 0 0 70px;
+	flex: 0 0 70px;
 }
 
 .sidebar {
@@ -7,7 +7,8 @@
     top: 0;
     left: 0;
     width: 70px;
-    height: 100vh;
+	height: 100%;
+	display: inline-block;
     @include column;
 }
 
@@ -34,51 +35,56 @@
 .sidebar__wrapper {
     @include gradient($angleStep*4);
     @include column;
-    flex: auto;
-    label {
-        display: block;
-        padding-top: 28px;
-        background-repeat: no-repeat;
-        background-position: center top;
-        @include forButtonsNav(home);
-        @include forButtonsNav(stactics);
-        @include forButtonsNav(user);
-        @include forButtonsNav(settings);
-        @include forButtonsNav(information);
-    }
+	flex: auto;
 
     a {
+		@include column;
         position: relative;
-        @include column;
-        align-items: center;
+		box-sizing: content-box;
+		align-items: center;
+		height: 38px;
         font-size: 10px;
         color: $colorBase;
-        padding: 15px 0;
+		padding: 15px 0;
+		@include forAnchorsNav(home);
+		@include forAnchorsNav(stactics);
+        @include forAnchorsNav(user);
+        @include forAnchorsNav(settings);
+		@include forAnchorsNav(information);
+		em {
+			padding-top: 28px;
+			background-repeat: no-repeat;
+			background-position: center top;
+		}
         .power {
-            width: 20px;
-            height: 20px;
+			@include square(20px);
             background: url(../img/nav/power-button.png) no-repeat center;
         }
         &:first-child {
-            padding-top: 30px;
-        }
+			padding-top: 30px;
+		}
         &:last-child {
             margin-top: auto;
             padding-bottom: 20px;
         }
         &:hover {
-            background: #c54556;
+            background: #e0545e;
         }
-        &:hover:after {
+		&:hover:after,
+		&:target:after {
             display: block;
-        }
+		}
+		&:target:after,
+		&:target {
+			background: #c54556;
+		}
         &:after {
             @extend %absPosition;
             top: 50%;
             left: calc(100% - 3.5px);
             display: none;
             @include square(7px);
-            background: #c54556;
+            background: #e0545e;
             transform: rotate(45deg);
         }
         &:last-child:hover:after {

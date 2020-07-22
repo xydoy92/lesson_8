@@ -28,7 +28,9 @@
     font-weight: $weight;
     color: transparent;
     @include gradient($angle, $start, $end);
-    -webkit-background-clip: text;
+	-webkit-background-clip: text;
+			background-clip: text;
+
 }
 
 @mixin forSpan($upDown, $color) {
@@ -42,15 +44,15 @@
     background: $colorBase;
 }
 
-@mixin forButtonsAside($nameButton) {
-    &[for*="#{$nameButton}"] {
-        background-image: url(../img/chat/#{$nameButton}.png);
+@mixin forAnchorsAside($nameAnchor) {
+    &[href*="#{$nameAnchor}"] > em {
+        background-image: url(../img/chat/#{$nameAnchor}.png);
     }
 }
 
-@mixin forButtonsNav($nameButton) {
-    &[for*="#{$nameButton}"] {
-        background-image: url(../img/nav/#{$nameButton}.png);
+@mixin forAnchorsNav($nameAnchor) {
+    &[href*="#{$nameAnchor}"] > em {
+        background-image: url(../img/nav/#{$nameAnchor}.png);
     }
 }
 
@@ -59,7 +61,7 @@
         width: 20px;
         height: 100%;
         @include gradient();
-        background-clip: content-box;
+		background-clip: content-box;
         mask: url(../img/header/#{$nameButton}.png) no-repeat center;
     }
 }

@@ -19,13 +19,15 @@ input[type="radio"] {
 }
 
 .wrapper {
-    display: flex;
+	display: flex;
+	max-width: 1400px;
+	margin: 0 auto;
     font-family:'Lato', sans-serif;
 }
 
 .wrapper__inner {
-    flex: 1 1 auto;
-    @include column;
+	flex: 1 1 auto;
+	@include column;
 }
 
 .wrapper__middle {
@@ -40,8 +42,7 @@ input[type="radio"] {
 }
 
 .caption {
-    display: flex;
-    flex-direction: column;
+	@include column;
     justify-content: center;
     padding: 0 30px 0 18px;
     h4 {
@@ -63,7 +64,7 @@ input[type="radio"] {
         nav {
             flex-wrap: wrap;
             justify-content: start;
-            .flex:last-child {
+            .header__nav:last-child {
                 margin-left: auto;
             }
             .nav__search {
@@ -96,14 +97,14 @@ input[type="radio"] {
 }
 
 @media (max-width: 700px) {
-    .flex:nth-child(2n+1) {
+    .header__nav:nth-child(2n+1) {
         order: 1;
         height: 50px;
         a {
             padding: 0 calc((100vw - 157px)/12);
         }
     }
-    .flex:last-child {
+    .header__nav:last-child {
         justify-content: space-between;
         width: 100%;
     }
@@ -118,11 +119,6 @@ input[type="radio"] {
     .wrapper__middle {
         flex-direction: column;
         flex-wrap: nowrap;
-    }
-    .tasks {
-        li:hover {
-            height: 200px;
-        }
     }
     aside {
         position: fixed;

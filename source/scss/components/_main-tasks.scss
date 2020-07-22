@@ -12,8 +12,10 @@
         color: $colorSubtitle;
     }
     li:hover {
-        height: 100px;
-        p {
+		flex-wrap: wrap;
+        p:first-of-type {
+			order: 1;
+			height: auto;
             overflow: visible;
         }
     }
